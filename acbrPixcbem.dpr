@@ -8,7 +8,8 @@ uses
   acbrpixcd.configuracao in 'acbrpixcd.configuracao.pas',
   acbrpixcd.shipay in 'acbrpixcd.shipay.pas',
   acbrpixcd.context in 'acbrpixcd.context.pas',
-  acbrpixcd.controller in 'acbrpixcd.controller.pas';
+  acbrpixcd.controller in 'acbrpixcd.controller.pas',
+  acbrpixcd.bancodoBrasil in 'acbrpixcd.bancodoBrasil.pas';
 
 {$R *.res}
 

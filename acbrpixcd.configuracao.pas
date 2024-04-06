@@ -9,7 +9,7 @@ type
   TConfiguracao = class(TInterfacedObject, iConfiguracao)
 
   private
-//    Fpsp: TTipoPSP;
+    // Fpsp: TTipoPSP;
     Fnome: string;
     Fcep: string;
     Fcidade: string;
@@ -42,8 +42,8 @@ type
     FSecretKey: string;
   public
     class function New: iConfiguracao;
-//    function psp(value: TTipoPSP): iConfiguracao; overload;
-//    function psp: TTipoPSP; overload;
+    // function psp(value: TTipoPSP): iConfiguracao; overload;
+    // function psp: TTipoPSP; overload;
     function nome(value: string): iConfiguracao; overload;
     function nome: string; overload;
     function cep(value: string): iConfiguracao; overload;
@@ -129,7 +129,7 @@ end;
 
 function TConfiguracao.accountId: string;
 begin
-  result := faccountId;
+  result := FaccountId;
 end;
 
 function TConfiguracao.ambiente(value: string): iConfiguracao;
@@ -140,7 +140,7 @@ end;
 
 function TConfiguracao.ambiente: string;
 begin
-   result := fambiente;
+  result := Fambiente;
 end;
 
 function TConfiguracao.apiVersion(value: string): iConfiguracao;
@@ -151,12 +151,12 @@ end;
 
 function TConfiguracao.apiVersion: string;
 begin
-   result := fapiVersion;
+  result := FapiVersion;
 end;
 
 function TConfiguracao.arqlog: string;
 begin
-   result := farqlog;
+  result := Farqlog;
 end;
 
 function TConfiguracao.arqlog(value: string): iConfiguracao;
@@ -173,7 +173,7 @@ end;
 
 function TConfiguracao.cep: string;
 begin
-   result := fcep;
+  result := Fcep;
 end;
 
 function TConfiguracao.certificado(value: string): iConfiguracao;
@@ -184,7 +184,7 @@ end;
 
 function TConfiguracao.certificado: string;
 begin
-  result := fcertificado;
+  result := Fcertificado;
 end;
 
 function TConfiguracao.certificadoRoot(value: string): iConfiguracao;
@@ -195,12 +195,12 @@ end;
 
 function TConfiguracao.certificadoRoot: string;
 begin
-  result := fcertificadoRoot;
+  result := FcertificadoRoot;
 end;
 
 function TConfiguracao.chavePix: string;
 begin
-  result := fchavePix;
+  result := FchavePix;
 end;
 
 function TConfiguracao.chavePix(value: string): iConfiguracao;
@@ -211,7 +211,7 @@ end;
 
 function TConfiguracao.chavePrimaria: string;
 begin
-   result := fchavePrimaria;
+  result := fchavePrimaria;
 end;
 
 function TConfiguracao.chavePrimaria(value: string): iConfiguracao;
@@ -228,7 +228,7 @@ end;
 
 function TConfiguracao.cidade: string;
 begin
-   result := fcidade;
+  result := Fcidade;
 end;
 
 function TConfiguracao.clientId(value: string): iConfiguracao;
@@ -239,12 +239,12 @@ end;
 
 function TConfiguracao.clientId: string;
 begin
-   result := fclientId;
+  result := FclientId;
 end;
 
 function TConfiguracao.clientSecret: string;
 begin
-  result := fclientSecret;
+  result := FclientSecret;
 end;
 
 function TConfiguracao.clientSecret(value: string): iConfiguracao;
@@ -261,7 +261,7 @@ end;
 
 function TConfiguracao.cnpj: string;
 begin
-   result := fcnpj;
+  result := Fcnpj;
 end;
 
 function TConfiguracao.ConsumerKey(value: string): iConfiguracao;
@@ -272,7 +272,7 @@ end;
 
 function TConfiguracao.ConsumerKey: string;
 begin
-   result := fConsumerKey;
+  result := FConsumerKey;
 end;
 
 function TConfiguracao.consumerSecret(value: string): iConfiguracao;
@@ -283,12 +283,12 @@ end;
 
 function TConfiguracao.consumerSecret: string;
 begin
-   result := fconsumerSecret;
+  result := FconsumerSecret;
 end;
 
 function TConfiguracao.developApplication: string;
 begin
-   result := fdevelopApplication;
+  result := FdevelopApplication;
 end;
 
 function TConfiguracao.developApplication(value: string): iConfiguracao;
@@ -299,7 +299,7 @@ end;
 
 function TConfiguracao.estado: string;
 begin
-   result := festado;
+  result := Festado;
 end;
 
 function TConfiguracao.estado(value: string): iConfiguracao;
@@ -310,7 +310,7 @@ end;
 
 function TConfiguracao.host: string;
 begin
-   result := fhost;
+  result := Fhost;
 end;
 
 function TConfiguracao.host(value: string): iConfiguracao;
@@ -327,12 +327,12 @@ end;
 
 function TConfiguracao.mediatorFree: Currency;
 begin
-   result := fmediatorFree;
+  result := FmediatorFree;
 end;
 
 class function TConfiguracao.New: iConfiguracao;
 begin
-  result := self.Create;
+  result := Self.Create;
 end;
 
 function TConfiguracao.nivellog(value: string): iConfiguracao;
@@ -343,7 +343,7 @@ end;
 
 function TConfiguracao.nivellog: string;
 begin
-   result := fnivellog;
+  result := Fnivellog;
 end;
 
 function TConfiguracao.nome(value: string): iConfiguracao;
@@ -354,12 +354,12 @@ end;
 
 function TConfiguracao.nome: string;
 begin
-  result := fnome;
+  result := Fnome;
 end;
 
 function TConfiguracao.pass: string;
 begin
-   result := fpass;
+  result := Fpass;
 end;
 
 function TConfiguracao.pass(value: string): iConfiguracao;
@@ -376,19 +376,19 @@ end;
 
 function TConfiguracao.port: string;
 begin
-  result := fport;
+  result := Fport;
 end;
 
-//function TConfiguracao.psp(value: TTipoPSP): iConfiguracao;
-//begin
-//  result := Self;
-//  Fpsp := value;
-//end;
+// function TConfiguracao.psp(value: TTipoPSP): iConfiguracao;
+// begin
+// result := Self;
+// Fpsp := value;
+// end;
 //
-//function TConfiguracao.psp: TTipoPSP;
-//begin
-//  result := fpsp;
-//end;
+// function TConfiguracao.psp: TTipoPSP;
+// begin
+// result := fpsp;
+// end;
 
 function TConfiguracao.SecretKey(value: string): iConfiguracao;
 begin
@@ -398,7 +398,7 @@ end;
 
 function TConfiguracao.SecretKey: string;
 begin
-  result := fSecretKey;
+  result := FSecretKey;
 end;
 
 function TConfiguracao.senha(value: string): iConfiguracao;
@@ -420,12 +420,12 @@ end;
 
 function TConfiguracao.timeout: integer;
 begin
-   result := ftimeout;
+  result := Ftimeout;
 end;
 
 function TConfiguracao.tipoCertificado: string;
 begin
-   result := ftipoCertificado;
+  result := FtipoCertificado;
 end;
 
 function TConfiguracao.tipoCertificado(value: string): iConfiguracao;
@@ -436,7 +436,7 @@ end;
 
 function TConfiguracao.token: string;
 begin
-   result := fToken;
+  result := Ftoken;
 end;
 
 function TConfiguracao.token(value: string): iConfiguracao;
@@ -447,7 +447,7 @@ end;
 
 function TConfiguracao.user: string;
 begin
-   result := fuser;
+  result := Fuser;
 end;
 
 function TConfiguracao.user(value: string): iConfiguracao;

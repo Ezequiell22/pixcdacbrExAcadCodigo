@@ -132,6 +132,7 @@
         <DCCReference Include="acbrpixcd.shipay.pas"/>
         <DCCReference Include="acbrpixcd.context.pas"/>
         <DCCReference Include="acbrpixcd.controller.pas"/>
+        <DCCReference Include="acbrpixcd.bancodoBrasil.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

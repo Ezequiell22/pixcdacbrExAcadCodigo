@@ -24,11 +24,15 @@ type
 
 implementation
 
+uses
+  acbrpixcd.bancodoBrasil;
+
 { TContext }
 
 procedure TContext.crateMap;
 begin
-  Fmap.Add(shipay, TStrategyShipay.new(Fconf))
+  Fmap.Add(shipay, TStrategyShipay.new(Fconf));
+  Fmap.Add(bancobrasil, TStrategyBancoDobrasil.new(Fconf))
 end;
 
 constructor TContext.create(conf: Iconfiguracao);
