@@ -9,7 +9,7 @@ type
   TConfiguracao = class(TInterfacedObject, iConfiguracao)
 
   private
-    Fpsp: TTipoPSP;
+//    Fpsp: TTipoPSP;
     Fnome: string;
     Fcep: string;
     Fcidade: string;
@@ -42,8 +42,8 @@ type
     FSecretKey: string;
   public
     class function New: iConfiguracao;
-    function psp(value: TTipoPSP): iConfiguracao; overload;
-    function psp: TTipoPSP; overload;
+//    function psp(value: TTipoPSP): iConfiguracao; overload;
+//    function psp: TTipoPSP; overload;
     function nome(value: string): iConfiguracao; overload;
     function nome: string; overload;
     function cep(value: string): iConfiguracao; overload;
@@ -379,16 +379,16 @@ begin
   result := fport;
 end;
 
-function TConfiguracao.psp(value: TTipoPSP): iConfiguracao;
-begin
-  result := Self;
-  Fpsp := value;
-end;
-
-function TConfiguracao.psp: TTipoPSP;
-begin
-  result := fpsp;
-end;
+//function TConfiguracao.psp(value: TTipoPSP): iConfiguracao;
+//begin
+//  result := Self;
+//  Fpsp := value;
+//end;
+//
+//function TConfiguracao.psp: TTipoPSP;
+//begin
+//  result := fpsp;
+//end;
 
 function TConfiguracao.SecretKey(value: string): iConfiguracao;
 begin

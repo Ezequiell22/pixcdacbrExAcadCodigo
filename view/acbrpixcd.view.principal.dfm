@@ -20,4 +20,9 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = Button1Click
   end
+  object ACBrPixCD1: TACBrPixCD
+    Recebedor.CodCategoriaComerciante = 0
+    Left = 520
+    Top = 272
+  end
 end

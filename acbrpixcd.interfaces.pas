@@ -9,8 +9,8 @@ uses
 type
   iConfiguracao = interface
     ['{0870D976-4028-47A6-942A-DBD01CC44C1F}']
-    function psp(value: TTipoPSP): iConfiguracao; overload;
-    function psp: TTipoPSP; overload;
+//    function psp(value: TTipoPSP): iConfiguracao; overload;
+//    function psp: TTipoPSP; overload;
 
     // configuração do recebedor
     function nome(value: string): iConfiguracao; overload;

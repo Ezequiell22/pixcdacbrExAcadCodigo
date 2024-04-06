@@ -5,11 +5,12 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, ACBrBase, acbrpixcd;
 
 type
   TForm1 = class(TForm)
     Button1: TButton;
+    ACBrPixCD1: TACBrPixCD;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations
@@ -31,14 +32,12 @@ uses
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   var
-  iController :=
-      TController
-        .NEW
-        .configuracao
-          .psp(shipay)
-            .ClientID('não sei')
-            .SecretKey('não sei')
-            .AccessKey('não sei')
+  LController := TController.NEW;
+
+  LController.configuracao.ClientID('não sei').SecretKey('não sei')
+    .AccessKey('não sei');
+
+  ACBrPixCD1.PSP := LController.contexto.execute(shipay).PSP;
 end;
 
 end.
