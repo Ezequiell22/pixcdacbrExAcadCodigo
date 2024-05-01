@@ -11,6 +11,8 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     ACBrPixCD1: TACBrPixCD;
+    edt_consulta_pix: TEdit;
+    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations
@@ -37,7 +39,8 @@ begin
   LController.configuracao.ClientID('não sei').SecretKey('não sei')
     .AccessKey('não sei');
 
-  ACBrPixCD1.PSP := LController.contexto.execute(shipay).PSP;
+
+  LController.pix.ConsultaPix(edt_consulta_pix.text);
 end;
 
 end.

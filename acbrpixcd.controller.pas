@@ -9,19 +9,19 @@ type
   TController = class(TInterfacedObject, iController)
   private
     Fconfiguracao: IConfiguracao;
-    Fcontexto: Icontext;
-
-    constructor crate;
+    FContext: Icontext;
+    FPix : iPixCd;
+    constructor create;
   public
     class function NEW: iController;
     function configuracao: IConfiguracao;
-    function contexto: Icontext;
+    function pix: IPixCd;
   end;
 
 implementation
 
 uses
-  acbrpixcd.context, acbrpixcd.configuracao;
+  acbrpixcd.context, acbrpixcd.configuracao, acbrpixcd.pixcd;
 
 { TController }
 
@@ -30,17 +30,17 @@ begin
   result := Fconfiguracao;
 end;
 
-function TController.contexto: Icontext;
+function TController.pix: IPixCd;
 begin
-  if not assigned(Fcontexto) then
-      Fcontexto := TContext.new(Fconfiguracao);
-
-  result := Fcontexto;
+  if not assigned(FPix) then
+      FPix := TPixCd.new(FContext);
+  result := FPix;
 end;
 
-constructor TController.crate;
+constructor TController.create;
 begin
   Fconfiguracao := TConfiguracao.new;
+  FContext := TContext.new(Fconfiguracao);
 end;
 
 class function TController.NEW: iController;

@@ -9,7 +9,8 @@ uses
   acbrpixcd.shipay in 'acbrpixcd.shipay.pas',
   acbrpixcd.context in 'acbrpixcd.context.pas',
   acbrpixcd.controller in 'acbrpixcd.controller.pas',
-  acbrpixcd.bancodoBrasil in 'acbrpixcd.bancodoBrasil.pas';
+  acbrpixcd.bancodoBrasil in 'acbrpixcd.bancodoBrasil.pas',
+  acbrpixcd.pixcd in 'acbrpixcd.pixcd.pas';
 
 {$R *.res}
 

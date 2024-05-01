@@ -4,9 +4,11 @@ interface
 
 uses
   acbrpixcd.enums,
-  acbrPixCD;
+  acbrPixCD,
+  system.JSON;
 
 type
+  iPixCd = interface;
   iConfiguracao = interface
     ['{0870D976-4028-47A6-942A-DBD01CC44C1F}']
 //    function psp(value: TTipoPSP): iConfiguracao; overload;
@@ -96,7 +98,33 @@ type
   iController = interface
     ['{07471412-B2B1-4A7C-B836-949F8ADD8C86}']
     function configuracao : IConfiguracao;
-    function contexto : Icontext;
+    function pix : iPixCD;
+  end;
+
+  iPixCd = interface
+    ['{67C0933D-0978-40F1-B9BE-ABC1EB948BA9}']
+    function ConsultaPix( avalue :string ) : IPixCd;
+    function ConsultarPixRecebidos( adtini, adtfim : TdateTime;
+      aPag, aItensPag: integer; aTxId, aCpfCnpj: string) : IpixCd;
+    function SolicitarDevolucao(aId, aIdDev, aDescricao : string;
+      aNatureza: integer; aValor : currency) : iPixCd;
+    function ConsultarDevolucao( aId, aIdDev : string) : iPixCd;
+    function CriarCobrancaImediata(aDevedor, aCpfCnpj, aPagador, aTxId: string;
+      aValor: currency; aPodeAlterarValor : boolean = false) : iPixCd;
+    function ConsultarCobrancaImediata(aTxId : string) : iPixCd;
+    function ConsultarCobrancas(aDtIni, aDtFim : TdateTime; aPag, aItensPag: integer;
+      aCpfCnpj: string; aStatus: integer; aComLocalizacao : boolean = false) : iPixCd;
+    function CancelarCobranca( aTxId : string) : iPixCd;
+    function CriarCobrancVencimento( aComprador, AcompradorCpfCnpj : string;
+      aDescontoModalidade : integer; aDescontoValor : currency;
+      aJurosModalidade : integer; aJurosValor : currency;
+      aMultaModalidade : integer ; aMultaValor : currency;
+      aVencimento: TdateTime; aDiasPagar : integer; aValor : currency) : iPixcd;
+    function ConsultarCobrancaVencimento( aTxId : string; aRevisao : integer) : iPixCd;
+
+    function retorno : string;
+    function Json : TJsonObject;
+    function JsonArray : TJsonArray;
   end;
 implementation
 
