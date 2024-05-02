@@ -5,7 +5,8 @@ interface
 uses
   acbrpixcd.enums,
   acbrPixCD,
-  system.JSON;
+  system.JSON,
+  system.Classes;
 
 type
   iPixCd = interface;
@@ -101,6 +102,12 @@ type
     function pix : iPixCD;
   end;
 
+  iBancoDoBrasil = interface
+    ['{17B69921-CE70-497F-B9E6-51D2E592E7B2}']
+    procedure QuandoReceberRespostaHttp( const aURL : string; const aMethod : string;
+    respHeaders: TStrings; var aResultCode : integer; var RespostaHttp : AnsiString);
+  end;
+
   iPixCd = interface
     ['{67C0933D-0978-40F1-B9BE-ABC1EB948BA9}']
     function ConsultaPix( avalue :string ) : IPixCd;
@@ -121,10 +128,10 @@ type
       aMultaModalidade : integer ; aMultaValor : currency;
       aVencimento: TdateTime; aDiasPagar : integer; aValor : currency) : iPixcd;
     function ConsultarCobrancaVencimento( aTxId : string; aRevisao : integer) : iPixCd;
-
     function retorno : string;
     function Json : TJsonObject;
     function JsonArray : TJsonArray;
+    function SimularPagamentoPIX(CopiaCola : string; Codigo : integer) : String;
   end;
 implementation
 

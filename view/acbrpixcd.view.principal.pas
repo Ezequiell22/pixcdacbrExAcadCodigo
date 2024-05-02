@@ -5,14 +5,18 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, ACBrBase, acbrpixcd;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, ACBrBase, acbrpixcd,
+  Vcl.ComCtrls;
 
 type
   TForm1 = class(TForm)
-    Button1: TButton;
-    ACBrPixCD1: TACBrPixCD;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
     edt_consulta_pix: TEdit;
     Label1: TLabel;
+    Button1: TButton;
+    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations

@@ -47,6 +47,7 @@ type
     function retorno: string;
     function JSON: TJsonObject;
     function JsonArray: TJsonArray;
+    function SimularPagamentoPIX(CopiaCola : string; Codigo : integer) : String;
   end;
 
 implementation
@@ -149,6 +150,11 @@ end;
 function TPixCd.retorno: string;
 begin
   result := Fretorno;
+end;
+
+function TPixCd.SimularPagamentoPIX(CopiaCola: string; Codigo: integer): String;
+begin
+
 end;
 
 function TPixCd.SolicitarDevolucao(aId, aIdDev, aDescricao: string;
